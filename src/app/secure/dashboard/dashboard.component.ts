@@ -1,0 +1,37 @@
+import {Component, OnInit} from '@angular/core';
+import {AquariumService} from '../../service/aquarium.service';
+import {Auth} from '../../../classes/auth';
+import {Measurament} from '../../interfaces/measurament';
+import {MeasuramentService} from '../../service/measurament.service';
+
+
+@Component({
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
+})
+export class DashboardComponent implements OnInit {
+  aquariums = [];
+  measurament: Measurament;
+  constructor(private aquariumService: AquariumService, private measuramentService: MeasuramentService) { }
+
+  ngOnInit(): void {
+
+    Auth.userEmmiter.subscribe(
+      user => this.aquariumService.usersAquarium(user.id).subscribe(
+        aquariums => this.aquariums = aquariums
+        )
+    );
+  }
+
+  delete(id: number): void{
+    this.aquariumService.deleteAquarium(id).subscribe();
+  }
+
+  getLastMeasurament(id: number): void {
+    this.measuramentService.lastMeasurament(id).subscribe(
+      measurament => this.measurament = measurament
+    );
+  }
+
+}

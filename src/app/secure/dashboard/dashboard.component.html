@@ -1,0 +1,49 @@
+
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        </div>
+
+        <!-- Content Row -->
+        <div class="row">
+
+          <!-- Earnings (Monthly) Card Example -->
+          <div class="col-xl-3 col-md-6 mb-4" *ngFor="let aquarium of aquariums">
+            <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-x font-weight-bold text-primary text-uppercase mb-1">
+                      {{aquarium.name}}</div>
+                    <div class="mt-1 font-weight-bold text-gray-800">
+                      <a routerLink="" class="text-dark" title="Settings"><i class="fas fa-cogs"></i></a>
+                      <a routerLink="" class="text-dark" title="Graphs"><i class="fas fa-chart-area pl-2"></i></a>
+                      <a routerLink="" class="text-dark" title="Components"><i class="fas fa-car-battery pl-2"></i></a>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <img class="rounded-circle"
+                         src="https://source.unsplash.com/qazBJRRopDc/60x60">
+                  </div>
+                </div>
+                <div class="row align-items-center pt-3">
+
+                  <div class="col-md-3">
+                    <div class="text-xs text-dark font-weight-bold">pH</div>
+                    <p>{{measurament.ph}}</p>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="text-xs text-dark font-weight-bold">Temperature</div>
+                    <p>{{measurament.temperature}}</p>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="text-xs text-dark font-weight-bold">Orp</div>
+                    <p>{{measurament.orp}}</p>
+                  </div>
+                </div>
+                <button class="btn btn-danger btn-user btn-block" (click)="delete(aquarium.id)"> Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>

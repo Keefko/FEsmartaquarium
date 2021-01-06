@@ -1,0 +1,29 @@
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/dashboard">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Dashboard</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/aquarium/create">
+      <i class="fas fa-plus-circle"></i>
+      <span>Create Aquarium</span></a>
+  </li>
+  <li class="nav-item" *ngFor="let aquarium of aquariums">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse"  [attr.data-target] ="'#collapsePages' + aquarium.id"
+       aria-expanded="true" aria-controls="collapsePages">
+      <i class="fas fa-fish"></i>
+      <span>{{aquarium.name}}</span></a>
+      <div id="collapsePages{{aquarium.id}}" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <a class="collapse-item" [routerLink]="['/measurament', aquarium.id]">Settings</a>
+          <a class="collapse-item" [routerLink]="['/user', aquarium.id]">Graphs</a>
+          <a class="collapse-item" [routerLink]="['/user', aquarium.id]">Components</a>
+        </div>
+      </div>
+  </li>
+</ul>
+<!-- End of Sidebar -->
+
