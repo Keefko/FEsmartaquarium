@@ -4,7 +4,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 @Component({
   selector: 'app-measurament',
   templateUrl: './measurament.component.html',
-  styleUrls: ['./measurament.component.css']
 })
 export class MeasuramentComponent implements OnInit {
   id: number;

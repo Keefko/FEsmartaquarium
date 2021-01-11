@@ -9,8 +9,8 @@ import {MqttBrokerService} from '../../service/mqtt-broker.service';
 @Component({
   selector: 'app-aquarium-settings',
   templateUrl: './aquarium-settings.component.html',
-  styleUrls: ['./aquarium-settings.component.css']
 })
+
 export class AquariumSettingsComponent implements OnInit {
   id: number;
   formSettings: FormGroup;

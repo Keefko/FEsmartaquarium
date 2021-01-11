@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {AuthService} from '../../service/auth.service';
-import {User} from '../../interfaces/user';
+
 
 // @ts-ignore
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css', './../public.component.css']
+  styleUrls: ['./../public.component.css']
 })
 
 export class RegisterComponent implements OnInit {
@@ -24,8 +24,6 @@ export class RegisterComponent implements OnInit {
 
   submit(): void {
     const data = this.form.getRawValue();
-    this.authService.register(data).subscribe(
-      value => {}
-    );
+    this.authService.register(data).subscribe();
   }
 }

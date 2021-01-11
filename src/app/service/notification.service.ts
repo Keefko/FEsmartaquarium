@@ -11,8 +11,8 @@ export class NotificationService {
 
   constructor(private httpClient: HttpClient) { }
 
-  get(id: number): Observable<Notification>{
-    return this.httpClient.get<Notification>( environment.api + 'notification/user/' + id);
+  get(id: number): Observable<Notification[]>{
+    return this.httpClient.get<Notification[]>( environment.api + 'notification/user/' + id);
   }
 
   delete(id: number): Observable<any> {

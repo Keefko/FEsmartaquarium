@@ -8,7 +8,6 @@ import {NotificationService} from '../../service/notification.service';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
   user: User;
@@ -23,6 +22,10 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     Auth.userEmmiter.subscribe(
       user => this.user = user
+    );
+
+    this.notificationService.get(1).subscribe(
+      notifications => this.notifications = notifications
     );
   }
 

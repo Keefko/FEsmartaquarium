@@ -9,7 +9,7 @@ import {Auth} from '../../../classes/auth';
 @Component({
   selector: 'app-aqaurium-create',
   templateUrl: './aqaurium-create.component.html',
-  styleUrls: ['./aqaurium-create.component.css']
+
 })
 export class AqauriumCreateComponent implements OnInit {
   form: FormGroup;
