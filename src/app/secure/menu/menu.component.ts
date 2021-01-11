@@ -3,6 +3,7 @@ import {User} from '../../interfaces/user';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../../service/auth.service';
 import {Auth} from '../../../classes/auth';
+import {NotificationService} from '../../service/notification.service';
 
 @Component({
   selector: 'app-menu',
@@ -11,11 +12,12 @@ import {Auth} from '../../../classes/auth';
 })
 export class MenuComponent implements OnInit {
   user: User;
-
+  notifications = [];
   constructor(
     public route: ActivatedRoute,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private notificationService: NotificationService
   ) { }
 
   ngOnInit(): void {

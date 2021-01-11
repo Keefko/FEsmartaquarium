@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {AquariumService} from '../../service/aquarium.service';
 import {Router} from '@angular/router';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {Aquarium} from '../../interfaces/aquarium';
 import {User} from '../../interfaces/user';
 import {Auth} from '../../../classes/auth';
 
@@ -30,7 +29,6 @@ export class AqauriumCreateComponent implements OnInit {
 
   submit(): void{
     const data = {id: this.form.controls.id.value , userId: this.user.id, name: this.form.controls.name.value};
-    console.log(data);
     this.aquariumService.addAquarium(data).subscribe(
         res => this.router.navigateByUrl('/dashboard')
     );

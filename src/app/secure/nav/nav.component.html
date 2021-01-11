@@ -18,9 +18,10 @@
       <span>{{aquarium.name}}</span></a>
       <div id="collapsePages{{aquarium.id}}" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" [routerLink]="['/measurament', aquarium.id]">Settings</a>
-          <a class="collapse-item" [routerLink]="['/user', aquarium.id]">Graphs</a>
-          <a class="collapse-item" [routerLink]="['/user', aquarium.id]">Components</a>
+          <a class="collapse-item" [routerLink]="['/aquarium/settings', aquarium.id]">Settings</a>
+          <a class="collapse-item" [routerLink]="['/measurament', aquarium.id]">Graphs</a>
+          <a class="collapse-item" [routerLink]="['/component', aquarium.id]">Components</a>
+          <a class="collapse-item" [routerLink]="['/connection', aquarium.id]">Connections</a>
         </div>
       </div>
   </li>

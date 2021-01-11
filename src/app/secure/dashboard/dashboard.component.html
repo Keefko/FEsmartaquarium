@@ -17,9 +17,10 @@
                     <div class="text-x font-weight-bold text-primary text-uppercase mb-1">
                       {{aquarium.name}}</div>
                     <div class="mt-1 font-weight-bold text-gray-800">
-                      <a routerLink="" class="text-dark" title="Settings"><i class="fas fa-cogs"></i></a>
-                      <a routerLink="" class="text-dark" title="Graphs"><i class="fas fa-chart-area pl-2"></i></a>
-                      <a routerLink="" class="text-dark" title="Components"><i class="fas fa-car-battery pl-2"></i></a>
+                      <a class="text-dark" [routerLink]="['/aquarium/settings', aquarium.id]" title="Settings"><i class="fas fa-cogs"></i></a>
+                      <a class="text-dark" [routerLink]="['/measurament', aquarium.id]" title="Graphs"><i class="fas fa-chart-area pl-2"></i></a>
+                      <a class="text-dark" [routerLink]="['/component', aquarium.id]" title="Components"><i class="fas fa-car-battery pl-2"></i></a>
+                      <a class="text-dark" [routerLink]="['/connection', aquarium.id]" title="Connections"><i class="fas fa-wifi pl-2"></i></a>
                     </div>
                   </div>
                   <div class="col-auto">
@@ -28,21 +29,21 @@
                   </div>
                 </div>
                 <div class="row align-items-center pt-3">
-
+<!--                  {{getLastMeasurament(aquarium.id)}}-->
                   <div class="col-md-3">
                     <div class="text-xs text-dark font-weight-bold">pH</div>
-                    <p>{{measurament.ph}}</p>
+                    <p>{{measurament?.ph}}</p>
                   </div>
                   <div class="col-md-6">
                     <div class="text-xs text-dark font-weight-bold">Temperature</div>
-                    <p>{{measurament.temperature}}</p>
+                    <p>{{measurament?.temperature}}</p>
                   </div>
                   <div class="col-md-3">
                     <div class="text-xs text-dark font-weight-bold">Orp</div>
-                    <p>{{measurament.orp}}</p>
+                    <p>{{measurament?.orp}}</p>
                   </div>
                 </div>
-                <button class="btn btn-danger btn-user btn-block" (click)="delete(aquarium.id)"> Delete</button>
+                <button class="btn btn-dan<ger btn-user btn-block" (click)="delete(aquarium.id)"> Delete</button>
               </div>
             </div>
           </div>

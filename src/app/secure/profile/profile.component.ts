@@ -18,21 +18,20 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
 
-    Auth.userEmmiter.subscribe(
-      user => this.form.patchValue(user)
-    );
-
     this.form =  this.formBuilder.group({
      id: '',
      login: '',
      password: '',
      email: ''
-   });
+    });
+
+    Auth.userEmmiter.subscribe(
+      user => this.form.patchValue(user)
+    );
   }
 
   submit(): void{
     const data = this.form.getRawValue();
-    console.log(data);
     this.userService.updateUser(data).subscribe(
       user => Auth.userEmmiter.emit(user)
     );

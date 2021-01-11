@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AquariumService} from '../../service/aquarium.service';
 import {Auth} from '../../../classes/auth';
 import {Measurament} from '../../interfaces/measurament';
 import {MeasuramentService} from '../../service/measurament.service';
+import {User} from '../../interfaces/user';
 
 
 @Component({
@@ -12,16 +13,28 @@ import {MeasuramentService} from '../../service/measurament.service';
 })
 export class DashboardComponent implements OnInit {
   aquariums = [];
-  measurament: Measurament;
+  @Input() user: User;
+  @Input() measurament: Measurament;
   constructor(private aquariumService: AquariumService, private measuramentService: MeasuramentService) { }
 
   ngOnInit(): void {
+    // Auth.userEmmiter.subscribe(
+    //   user => {
+    //     this.user = user;
+    //     this.getAquariums(user.id);
+    //     }
+    // );
 
-    Auth.userEmmiter.subscribe(
-      user => this.aquariumService.usersAquarium(user.id).subscribe(
-        aquariums => this.aquariums = aquariums
-        )
+    this.aquariumService.usersAquarium(1).subscribe(
+      aquariums => this.aquariums = aquariums
     );
+
+  }
+
+  getAquariums(id: number): void{
+      this.aquariumService.usersAquarium(id).subscribe(
+          aquariums => this.aquariums = aquariums
+      );
   }
 
   delete(id: number): void{

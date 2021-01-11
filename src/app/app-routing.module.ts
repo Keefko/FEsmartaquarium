@@ -8,6 +8,9 @@ import {DashboardComponent} from './secure/dashboard/dashboard.component';
 import {ProfileComponent} from './secure/profile/profile.component';
 import {MeasuramentComponent} from './secure/measurament/measurament.component';
 import {AqauriumCreateComponent} from './secure/aqaurium-create/aqaurium-create.component';
+import {AquariumSettingsComponent} from './secure/aquarium-settings/aquarium-settings.component';
+import {ConnectionComponent} from './secure/connection/connection.component';
+import {ComponentComponent} from './secure/component/component.component';
 
 const routes: Routes = [
   {path: '', component: PublicComponent, children: [
@@ -18,8 +21,11 @@ const routes: Routes = [
   {path: '', component: SecureComponent, children: [
       {path: 'dashboard' , component: DashboardComponent},
       {path: 'profile', component: ProfileComponent},
-      {path: 'measurament/:id', component: MeasuramentComponent, pathMatch: 'full'},
-      {path: 'aquarium/create', component: AqauriumCreateComponent}
+      {path: 'measurament/:id', component: MeasuramentComponent},
+      {path: 'aquarium/settings/:id', component: AquariumSettingsComponent},
+      {path: 'connection/:id', component: ConnectionComponent},
+      {path: 'aquarium/create', component: AqauriumCreateComponent},
+      {path: 'component/:id', component: ComponentComponent}
     ]},
 
 
