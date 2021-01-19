@@ -4,6 +4,9 @@ import {Auth} from '../../../classes/auth';
 import {Measurament} from '../../interfaces/measurament';
 import {MeasuramentService} from '../../service/measurament.service';
 import {User} from '../../interfaces/user';
+import {Router} from '@angular/router';
+import {Aquarium} from '../../interfaces/aquarium';
+import {ProfileService} from '../../service/profile.service';
 
 
 @Component({
@@ -11,38 +14,42 @@ import {User} from '../../interfaces/user';
   templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent implements OnInit {
-  aquariums = [];
-  @Input() user: User;
+  aquariums: Aquarium[] = [];
+  user: User;
   @Input() measurament: Measurament;
-  constructor(private aquariumService: AquariumService, private measuramentService: MeasuramentService) { }
+  constructor(private aquariumService: AquariumService, private measuramentService: MeasuramentService,
+              private router: Router, private profileService: ProfileService) { }
 
   ngOnInit(): void {
-    // Auth.userEmmiter.subscribe(
-    //   user => {
-    //     this.user = user;
-    //     this.getAquariums(user.id);
-    //     }
-    // );
-
-    this.aquariumService.usersAquarium(1).subscribe(
-      aquariums => this.aquariums = aquariums
+    this.profileService.user.subscribe(
+      user => {
+        this.user = user;
+        this.loadData();
+      }
     );
-
   }
 
-  getAquariums(id: number): void{
-      this.aquariumService.usersAquarium(id).subscribe(
-          aquariums => this.aquariums = aquariums
-      );
+  private loadData(): void {
+    this.aquariumService.usersAquarium(this.user?.id).subscribe(
+      aquariums => {
+        this.aquariums = aquariums;
+        this.aquariums.forEach(aq => this.getLastMeasurament(aq));
+      }
+    );
   }
 
   delete(id: number): void{
-    this.aquariumService.deleteAquarium(id).subscribe();
+    this.aquariumService.deleteAquarium(id).subscribe(
+      res => {
+        console.log(res);
+        window.location.reload();
+      }
+    );
   }
 
-  getLastMeasurament(id: number): void {
-    this.measuramentService.lastMeasurament(id).subscribe(
-      measurament => this.measurament = measurament
+  getLastMeasurament(aq: Aquarium): void {
+    this.measuramentService.lastMeasurament(aq.id).subscribe(
+      measurament => aq.measurament = measurament
     );
   }
 

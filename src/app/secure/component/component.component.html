@@ -1,1 +1,32 @@
-<p>component works!</p>
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <a [routerLink]="['/component/create', id]" class="btn btn-primary text-xs px-2 py-2">Add component</a>
+</div>
+
+<div class="row">
+
+  <!-- Earnings (Monthly) Card Example -->
+  <div class="col-xl-4 col-lg-4 col-md-6 mb-4" *ngFor="let component of components">
+    <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center mb-2">
+          <div class="col mr-2">
+            <div class="text-x font-weight-bold text-primary text-uppercase mb-1">
+              <a href="#" class="text-decoration-none" [routerLink]="['/component/edit', component.id]">{{component.name}}</a>
+            </div>
+            <div class="text-xs font-weight-bold text-uppercase ">
+              period: {{component.period | date: 'yyyy-MM-dd'}} {{component.periodAllowed}}
+            </div>
+            <div class="text-xs font-weight-bold text-uppercase ">
+              Cyklus: {{component.turnOn}} {{component.cyklus}}
+            </div>
+            <div class="text-xs font-weight-bold text-uppercase ">
+              Topic: {{component.topic}}
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-danger btn-user btn-block" (click)="delete(component.id)"> Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

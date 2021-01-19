@@ -13,11 +13,13 @@ import { AquariumSettingsComponent } from './aquarium-settings/aquarium-settings
 import { ConnectionComponent } from './connection/connection.component';
 import { ComponentComponent } from './component/component.component';
 import { NotificationComponent } from './notification/notification.component';
+import { ComponentCreateComponent } from './component-create/component-create.component';
+import { ComponentEditComponent } from './component-edit/component-edit.component';
 
 
 
 @NgModule({
-  declarations: [SecureComponent, NavComponent, MenuComponent, ProfileComponent, DashboardComponent, MeasuramentComponent, AqauriumCreateComponent, AquariumSettingsComponent, ConnectionComponent, ComponentComponent, NotificationComponent],
+  declarations: [SecureComponent, NavComponent, MenuComponent, ProfileComponent, DashboardComponent, MeasuramentComponent, AqauriumCreateComponent, AquariumSettingsComponent, ConnectionComponent, ComponentComponent, NotificationComponent, ComponentCreateComponent, ComponentEditComponent],
   imports: [
     CommonModule,
     RouterModule,

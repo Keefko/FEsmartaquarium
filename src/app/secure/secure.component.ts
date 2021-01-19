@@ -4,6 +4,8 @@ import {AuthService} from '../service/auth.service';
 import {Router} from '@angular/router';
 import {Auth} from '../../classes/auth';
 import {AquariumService} from '../service/aquarium.service';
+import {ProfileService} from '../service/profile.service';
+import {Observable} from 'rxjs';
 
 
 @Component({
@@ -11,20 +13,17 @@ import {AquariumService} from '../service/aquarium.service';
   templateUrl: './secure.component.html',
 })
 export class SecureComponent implements OnInit {
-  user: User;
-  constructor(private authService: AuthService, private aquariumService: AquariumService, private router: Router) { }
+
+  constructor(private authService: AuthService, private aquariumService: AquariumService,
+              private router: Router, private profileService: ProfileService) { }
+
 
   ngOnInit(): void {
     const id = Number(sessionStorage.getItem('id'));
-    this.getUser(id);
+    this.profileService.user = this.authService.getUser(id);
+    console.log(this.profileService.user);
   }
 
-  getUser(id): void {
-    this.authService.getUser(id).subscribe(
-      user => { this.user = user; Auth.userEmmiter.emit(user); },
-      () => {sessionStorage.clear(); this.router.navigateByUrl('/login').then(); }
-    );
-  }
 
 
 }

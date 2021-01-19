@@ -6232,7 +6232,7 @@ a.close.disabled {
 .carousel-indicators {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -50px;
   left: 0;
   z-index: 15;
   display: flex;
@@ -6252,7 +6252,7 @@ a.close.disabled {
   margin-left: 3px;
   text-indent: -999px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: black;
   background-clip: padding-box;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;

@@ -1,7 +1,7 @@
 import {Timestamp} from 'rxjs';
 
 export interface Component {
-  id: number;
+  id?: number;
   aquariumId: number;
   name: string;
   topic: string;

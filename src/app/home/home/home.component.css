@@ -1,0 +1,192 @@
+
+html{
+  scroll-behavior: smooth;
+}
+
+.nav_change {
+  position: fixed;
+  top: 0;
+}
+
+.router-link-active:hover {
+  cursor: pointer;
+}
+
+.title-text {
+  color: black;
+  font: normal bold 49px/ 60px sans-serif;
+  letter-spacing: 14px;
+}
+
+.jumbotron {
+  color: white;
+  /*background-image: url("https://source.unsplash.com/6Bfsnn_OPPE/1920x1200");
+   */
+  background-image: url("http://aqualots.themerex.net/wp-content/uploads/2017/11/image-34-copyright-837x616.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+
+.masthead {
+  padding-top: 40vh;
+  padding-bottom: 8rem;
+}
+
+.masthead h1 { font-size: calc(2.5em + 1vmin); line-height: calc(1em + 1vmin)}
+.masthead p { font-size: 1.25rem; line-height: 1.25rem;}
+
+
+
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar li a:hover {
+  color: orange;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.about-image{
+  max-width: 80%;
+}
+
+.about-image img {
+  width: 100%;
+  height: 70vh;
+  max-height: 450px;
+}
+
+
+.about-area .about-title h2 > span{
+  display: block;
+  font: normal bold 49px/ 60px sans-serif;
+  letter-spacing: 14px;
+}
+
+.about-area .about-title .paragraph > p{
+  padding: .4rem 0;
+}
+
+
+@media only screen and (max-width: 792px){
+  .about-area .about-title h2 > span{
+    font-size: 31px;
+    letter-spacing: 10px;
+  }
+
+  .about-area .about-title p{
+    padding: 0%;
+  }
+
+  .about-image img{
+    display: none;
+  }
+
+}
+
+.stats{
+  padding-top: 50px;
+  padding-bottom: 30px;
+  background: darkblue;
+}
+
+.stats i {
+  color: #00c3ed;
+  font-size: 40px;
+}
+
+.services-area .services-title h1,
+.blog-area .blog-title h1{
+  font-size: 35px;
+}
+
+.services-area .services{
+  background: rgba(248, 252, 253, 0.973);
+  padding: 2rem 0;
+  width: 16rem;
+  height: 15rem;
+  transition: box-shadow .7s ease;
+}
+
+.services-area .services:hover {
+  background: darkblue;
+  color: white;
+}
+
+.services-area .services i {
+  font-size: 35px;
+}
+
+@media only screen and (max-width: 1910px){
+
+  .services-area .services-title,
+  .about-area,
+  .blog-area{
+    padding: 3% 4%;
+  }
+}
+
+
+.blog-area .owl-carousel .item .item-image:hover{
+
+}
+
+.blog .carousel-indicators {
+  left: 0;
+  top: auto;
+  bottom: -90px;
+
+}
+
+/* The colour of the indicators */
+.blog .carousel-indicators li {
+  background: black;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+}
+
+.blog .carousel-indicators .active {
+  background: #707070;
+}
+
+
+footer.footer-area{
+  margin-top: 5rem;
+  padding: 2rem 0;
+  background: black;
+}
+
+footer.footer-area .social h5{
+  font: normal 500 23px/ 30px sans-serif;
+}
+
+footer.footer-area .social a > i{
+  font-size:22px;
+  padding: 2rem;
+  color: white;
+}
+
+footer.footer-area .social a:hover > i{
+  color: darkblue;
+}
+
+footer.footer-area .site-logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+owl-carousel-o .owl-theme .owl-dots .owl-dot.active span,
+owl-carousel-o .owl-theme .owl-dots .owl-dot:hover span{
+  background:darkblue;
+}

@@ -4,6 +4,7 @@ import {UserService} from '../../service/user.service';
 import {Auth} from '../../../classes/auth';
 import {User} from '../../interfaces/user';
 import {Router} from '@angular/router';
+import {ProfileService} from '../../service/profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -13,26 +14,33 @@ export class ProfileComponent implements OnInit {
   form: FormGroup;
   user: User;
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService,
+              private router: Router, private profileService: ProfileService) { }
 
   ngOnInit(): void {
 
-    this.form =  this.formBuilder.group({
-     id: '',
-     login: '',
-     password: '',
-     email: ''
+    this.form = this.formBuilder.group({
+      id: '',
+      login: '',
+      password: '',
+      email: ''
     });
 
-    Auth.userEmmiter.subscribe(
-      user => this.form.patchValue(user)
+    this.profileService.user.subscribe(
+      user => {
+        this.form.patchValue(user);
+        this.user = user;
+      }
     );
-  }
 
+  }
   submit(): void{
     const data = this.form.getRawValue();
     this.userService.updateUser(data).subscribe(
-      user => Auth.userEmmiter.emit(user)
+      user => {
+        Auth.userEmmiter.emit(user);
+        this.router.navigate([this.router.url]);
+      }
     );
   }
 

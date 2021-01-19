@@ -1,0 +1,320 @@
+<header class="jumbotron jumbotron-fluid">
+  <nav class="navbar nav navbar-expand-lg navbar-dark fixed-top pt-2" (scroll)="onWindowScroll($event)">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-brand">
+      FishTank
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link router-link-active" (click)="scroll('about-area')">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link router-link-active" (click)="scroll('services')">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link router-link-active" (click)="scroll('blog')">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link router-link-active" (click)="redirect('/login')">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link router-link-active" (click)="redirect('/register')">Register</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="masthead">
+    <div class="container d-flex align-items-center flex-column">
+      <h1 class="font-weight-bold text-uppercase"> Best Aquarium Smart Solution</h1>
+      <p class="pt-2 font-italic ">Automated maintenance, design, comfortable aquarium control from home distance  </p>
+    </div>
+  </div>
+</header>
+
+
+<section class="about-area mt-4" id="about-area">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-5 col-md-12">
+        <div class="about-image mx-lg-auto pt-lg-5">
+          <figure>
+            <img src="./assets/images/about.jpg" alt="About-us">
+          </figure>
+        </div>
+      </div>
+      <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 about-title">
+        <h2 class="text-uppercase title-text pt-2">
+          <span>Let me</span>
+          <span>Introduce</span>
+          <span>FishTank</span>
+        </h2>
+        <div class="paragraph py-4 w-75">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a dapibus est. Suspendisse et libero eu enim bibendum commodo. Cras et massa massa. Sed quis risus luctus, aliquam ligula at, fringilla augue. Fusce interdum felis ut orci luctus, sit amet viverra est dapibus. Proin nec convallis velit.
+          </p>
+        </div>
+        <button type="button" class="btn btn-primary bg-blue" routerLink="/register">Start with FishTank app</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 text-center">
+        <i class="fas fa-user-friends"></i>
+        <h3 class="text-white font-weight-bold pt-2">5000</h3>
+        <p class="text-s text-white">Happy Clients</p>
+      </div>
+      <div class="col-lg-4 col-md-6 text-center">
+        <i class="fas fa-fish"></i>
+        <h3 class="text-white font-weight-bold pt-2">30 000+</h3>
+        <p class="text-s text-white text-uppercase">Healthy fish</p>
+      </div>
+      <div class="col-lg-4 col-md-6 text-center">
+        <i class="fas fa-box"></i>
+        <h3 class="text-white font-weight-bold pt-2">7000</h3>
+        <p class="text-s text-white text-uppercase">Aquariums</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="services-area mt-5" id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center services-title">
+        <h1 class="text-uppercase title-text">Services offer</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a dapibus est. Suspendisse et libero eu enim bibendum commodo.
+        </p>
+      </div>
+
+      <div class="service-list">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="services mx-auto mb-2">
+              <div class="text-center">
+                <i class="fas fa-weight"></i>
+              </div>
+              <div class="card-body text-center">
+                <div class="card-title">
+                  <h5 class="font-weight-bold">Measurament & graphs</h5>
+                </div>
+                <div class="card-text">
+                  <p class="text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a dapibus est. Suspendisse et libero eu enim bibendum commodo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="services mx-auto">
+              <div class="text-center">
+                <i class="fas fa-hdd"></i>
+              </div>
+              <div class="card-body text-center">
+                <div class="card-title">
+                  <h5 class="font-weight-bold">Components</h5>
+                </div>
+                <div class="card-text">
+                  <p class="text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a dapibus est. Suspendisse et libero eu enim bibendum commodo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="services mx-auto">
+              <div class="text-center">
+                <i class="fas fa-laptop-house"></i>
+              </div>
+              <div class="card-body text-center">
+                <div class="card-title">
+                  <h5 class="font-weight-bold">Remote access</h5>
+                </div>
+                <div class="card-text">
+                  <p class="text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a dapibus est. Suspendisse et libero eu enim bibendum commodo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="services mx-auto">
+              <div class="text-center">
+                <i class="fas fa-magic"></i>
+              </div>
+              <div class="card-body text-center">
+                <div class="card-title">
+                  <h5 class="font-weight-bold">Automated maintenance</h5>
+                </div>
+                <div class="card-text">
+                  <p class="text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a dapibus est. Suspendisse et libero eu enim bibendum commodo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="blog-area mt-5" id="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center blog-title">
+        <h1 class="text-uppercase title-text">Our blog</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a dapibus est. Suspendisse et libero eu enim bibendum commodo.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide>
+    <div class="slide">
+      <div class="item-image">
+        <img  src="https://source.unsplash.com/L-2p8fapOA8/300x250" class="img-fluid"/>
+      </div>
+
+      <div class="item-title">
+        <a href="#" class="text-decoration-none text-dark"><h5 class="py-2">How to take care of turtles</h5></a>
+        <p class="font-size-1 text-secondary text-xs">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, exercitationem!
+        </p>
+        <span class="d-flex">
+              <a href="#" class="text-dark">FishTank admin</a>
+              <span class="text-secondary pl-2">18.12.2020</span>
+            </span>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="slide">
+      <div class="item-image">
+        <img  src="https://source.unsplash.com/K2RH1QZdLF4/300x250" class="img-fluid"/>
+      </div>
+
+      <div class="item-title">
+        <a href="#" class="text-decoration-none text-dark"><h5 class="py-2">How to take care of turtles</h5></a>
+        <p class="font-size-1 text-secondary text-xs">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, exercitationem!
+        </p>
+        <span class="d-flex">
+              <a href="#" class="text-dark">FishTank admin</a>
+              <span class="text-secondary pl-2">18.12.2020</span>
+            </span>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="slide">
+
+      <div class="item-image">
+        <img  src="https://source.unsplash.com/_ebOKZVUZLI/300x250" class="img-fluid"/>
+      </div>
+
+      <div class="item-title">
+        <a href="#" class="text-decoration-none text-dark"><h5 class="py-2">How to take care of turtles</h5></a>
+        <p class="font-size-1 text-secondary text-xs">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, exercitationem!
+        </p>
+        <span class="d-flex">
+              <a href="#" class="text-dark">FishTank admin</a>
+              <span class="text-secondary pl-2">18.12.2020</span>
+            </span>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="slide">
+      <div class="item-image">
+        <img  src="https://source.unsplash.com/1AjxqINfBYs/300x250" class="img-fluid"/>
+      </div>
+
+      <div class="item-title">
+        <a href="#" class="text-decoration-none text-dark"><h5 class="py-2">How to take care of turtles</h5></a>
+        <p class="font-size-1 text-secondary text-xs">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, exercitationem!
+        </p>
+        <span class="d-flex">
+              <a href="#" class="text-dark">FishTank admin</a>
+              <span class="text-secondary pl-2">18.12.2020</span>
+            </span>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="slide">
+      <div class="item-image">
+        <img  src="https://source.unsplash.com/YV593oyMKmo/300x250" class="img-fluid"/>
+      </div>
+
+      <div class="item-title">
+        <a href="#" class="text-decoration-none text-dark"><h5 class="py-2">How to take care of turtles</h5></a>
+        <p class="font-size-1 text-secondary text-xs">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, exercitationem!
+        </p>
+        <span class="d-flex">
+              <a href="#" class="text-dark">FishTank admin</a>
+              <span class="text-secondary pl-2">18.12.2020</span>
+            </span>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template carouselSlide>
+    <div class="slide">
+      <div class="item-image">
+        <img  src="https://source.unsplash.com/rEM3cK8F1pk/300x250" class="img-fluid"/>
+      </div>
+
+      <div class="item-title">
+        <a href="#" class="text-decoration-none text-dark"><h5 class="py-2">How to take care of turtles</h5></a>
+        <p class="font-size-1 text-secondary text-xs">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, exercitationem!
+        </p>
+        <span class="d-flex">
+              <a href="#" class="text-dark">FishTank admin</a>
+              <span class="text-secondary pl-2">18.12.2020</span>
+            </span>
+      </div>
+    </div>
+  </ng-template>
+</owl-carousel-o>
+
+<footer class="footer-area">
+  <div class="container">
+    <div class="">
+      <div class="site-logo text-center py-4 text-white">
+        FishTank
+      </div>
+      <div class="social text-center">
+        <h5 class="text-uppercase">Follow us</h5>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="copyrights text-center">
+        <p class="para">
+          Copyright ©202o All rights reserved <a href="#" class="text-decoration-none">Dany</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

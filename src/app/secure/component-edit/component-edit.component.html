@@ -1,0 +1,41 @@
+<div class="row justify-content-center ">
+  <div class="col-lg-6">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Edit {{component.name}}</h6>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="form" (submit)="submit()">
+          <input type="hidden" formControlName="id">
+          <div class="form-group">
+            <label>Name</label>
+            <select formControlName="name" id="names" class="form-control form-control-user">
+              <option *ngFor="let name of names; let i = index" [value]="names[i].name" [selected]="name == component.name">
+                {{names[i].name}}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Topic</label>
+            <input type="text" formControlName="topic"  class="form-control form-control-user">
+          </div>
+          <div class="form-group">
+            <label>Period allowed</label>
+            <input type="checkbox" formControlName="periodAllowed" class="pl-2">
+            <label>Turn on</label>
+            <input type="checkbox" formControlName="turnOn">
+          </div>
+          <div class="form-group">
+            <label>Period</label>
+            <input type="datetime-local" formControlName="period"  class="form-control form-control-user">
+          </div>
+          <div class="form-group">
+            <label>Cyklus</label>
+            <input type="number" formControlName="cyklus"  class="form-control form-control-user">
+          </div>
+          <input type="submit" class="btn btn-primary btn-user btn-block" value="Create">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

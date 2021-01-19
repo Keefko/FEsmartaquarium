@@ -28,9 +28,13 @@ export class AqauriumCreateComponent implements OnInit {
   }
 
   submit(): void{
-    const data = {id: this.form.controls.id.value , userId: this.user.id, name: this.form.controls.name.value};
+    const data = {id: this.form.controls.id.value , userId: 1, name: this.form.controls.name.value};
     this.aquariumService.addAquarium(data).subscribe(
-        res => this.router.navigateByUrl('/dashboard')
+        res => {
+          this.router.navigateByUrl('/dashboard').then(() => {
+            this.router.navigate([this.router.url]);
+          });
+        }
     );
   }
 

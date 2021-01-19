@@ -22,4 +22,9 @@ export class AuthService {
   getUser(id): Observable<User> {
     return  this.httpClient.get<User>(environment.api + 'users/' + id);
   }
+
+  loggedIn(): any {
+    return !!sessionStorage.getItem('id');
+  }
+
 }

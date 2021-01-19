@@ -1,6 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AquariumService} from '../../service/aquarium.service';
+import {ProfileService} from '../../service/profile.service';
+import {User} from '../../interfaces/user';
 import {Auth} from '../../../classes/auth';
+
 
 @Component({
   selector: 'app-nav',
@@ -8,16 +11,22 @@ import {Auth} from '../../../classes/auth';
 })
 export class NavComponent implements OnInit {
   aquariums = [];
-  constructor(private aquariumService: AquariumService) { }
+  @Input() user: User;
+  constructor(private aquariumService: AquariumService, private profileService: ProfileService) { }
 
   ngOnInit(): void {
-
-    Auth.userEmmiter.subscribe(
-      user =>  this.aquariumService.usersAquarium(user.id).subscribe(
-          aquariums => this.aquariums = aquariums
-      )
+    this.profileService.user.subscribe(
+      user => {
+        this.user = user;
+        this.loadData();
+      }
     );
+  }
 
+  loadData(): void {
+    this.aquariumService.usersAquarium(this.user?.id).subscribe(
+      aquariums => this.aquariums = aquariums
+    );
   }
 
 }

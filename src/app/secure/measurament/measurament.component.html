@@ -1,1 +1,39 @@
-<p>hovno</p>
+<div class="row justify-content-center">
+  <div class="col-lg-12">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="properties">Property: </label>
+            <select formControlName="properties" id="properties" class="form-control ml-2">
+              <option *ngFor="let property of properties; let i = index" [value]="properties[i].id">
+                {{properties[i].name}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="from" class="pl-2">From: </label>
+            <input formControlName="from" id="from" type="datetime-local" class="form-control ml-2"/>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="form-group">
+            <label for="to" class="pl-2">To: </label>
+            <input formControlName="to" id="to" type="datetime-local" class="form-control ml-2"/>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <label for="intervals" class="pl-2">Interval: </label>
+          <select formControlName="intervals" id="intervals" class="form-control ml-2">
+            <option *ngFor="let interval of intervals; let i = index" [value]="intervals[i].id">
+              {{intervals[i].name}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <input type="submit" value="submit" class="btn btn-primary btn-user ml-2">
+    </form>
+  </div>
+</div>
