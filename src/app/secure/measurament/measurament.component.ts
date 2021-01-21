@@ -2,8 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MeasuramentService} from '../../service/measurament.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {BaseChartDirective, ChartsModule, Color, Label} from 'ng2-charts';
-import {ChartDataSets, ChartOptions, ChartType} from 'chart.js';
+import {Chart} from 'chart.js';
 
 @Component({
   selector: 'app-measurament',
@@ -15,7 +14,7 @@ export class MeasuramentComponent implements OnInit {
   measuraments = [];
   properties = [];
   intervals = [];
-
+  chart;
   constructor(private route: ActivatedRoute, private measuramentService: MeasuramentService,
               private formBuilder: FormBuilder ) { }
   ngOnInit(): void {
@@ -42,6 +41,53 @@ export class MeasuramentComponent implements OnInit {
         console.log(measuraments);
       }
     );
+
+    this.chart = new Chart(
+      'canvas',
+      {
+        options: {
+          responsive: true,
+          title: {
+            display: true,
+            text: 'Combo Bar and line Chart'
+          },
+        },
+         type: 'line',
+         data: {
+           labels: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'],
+           datasets: [
+             {
+               type: 'line',
+               label: 'My First dataset',
+               data: [243, 156, 365, 30, 156, 265, 356, 543],
+               backgroundColor: 'rgba(255,0,255,0.4)',
+               borderColor: 'rgba(255,0,255,0.4)',
+               fill: false,
+             }, ]
+         },
+      }
+    );
+  }
+
+  addData(chart, label, data): void {
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+      dataset.data.push(data);
+    });
+    chart.update();
+  }
+
+  removeData(chart): void {
+    chart.data.labels.pop();
+    chart.data.datasets.forEach((dataset) => {
+      dataset.data.pop();
+    });
+    chart.update();
+  }
+
+  updateChartData(chart, data, dataSetIndex): void{
+    chart.data.datasets[dataSetIndex].data = data;
+    chart.update();
   }
 
   getIntervals(): any{
